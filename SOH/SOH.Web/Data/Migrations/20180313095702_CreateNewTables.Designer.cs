@@ -11,9 +11,10 @@ using System;
 namespace SOH.Web.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180313095702_CreateNewTables")]
+    partial class CreateNewTables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -179,62 +180,6 @@ namespace SOH.Web.Data.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("SOH.Web.Data.Image", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<Guid?>("ProductId");
-
-                    b.Property<string>("URI");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ProductId");
-
-                    b.ToTable("Images");
-                });
-
-            modelBuilder.Entity("SOH.Web.Data.Post", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<int>("ApplicationUserId");
-
-                    b.Property<string>("ApplicationUserId1");
-
-                    b.Property<string>("Content");
-
-                    b.Property<Guid>("ImageId");
-
-                    b.Property<string>("Title");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ApplicationUserId1");
-
-                    b.HasIndex("ImageId");
-
-                    b.ToTable("Posts");
-                });
-
-            modelBuilder.Entity("SOH.Web.Data.Product", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<long>("Price");
-
-                    b.Property<int>("StockQuantity");
-
-                    b.Property<string>("Title");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Products");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole")
@@ -277,25 +222,6 @@ namespace SOH.Web.Data.Migrations
                     b.HasOne("SOH.Web.Data.ApplicationUser")
                         .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("SOH.Web.Data.Image", b =>
-                {
-                    b.HasOne("SOH.Web.Data.Product")
-                        .WithMany("Images")
-                        .HasForeignKey("ProductId");
-                });
-
-            modelBuilder.Entity("SOH.Web.Data.Post", b =>
-                {
-                    b.HasOne("SOH.Web.Data.ApplicationUser", "ApplicationUser")
-                        .WithMany()
-                        .HasForeignKey("ApplicationUserId1");
-
-                    b.HasOne("SOH.Web.Data.Image", "Image")
-                        .WithMany()
-                        .HasForeignKey("ImageId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
