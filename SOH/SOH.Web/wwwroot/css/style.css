@@ -1,1 +1,18 @@
-/* Your custom styles */
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 12px;
+    line-height: 1.42;
+    border-radius: 15px;
+}
+
+.form-header {
+    color: #ffffff;
+    text-align: center;
+    margin-top: -50px;
+    margin-bottom: 3rem;
+    padding: 1rem;
+    border-radius: 2px;
+}

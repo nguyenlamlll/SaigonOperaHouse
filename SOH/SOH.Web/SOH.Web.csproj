@@ -4,6 +4,10 @@
     <UserSecretsId>aspnet-SOH.Web-987DDE23-7334-4FBA-9B3E-2EFD6B40A97F</UserSecretsId>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="Data\Migrations\20180314074407_AddEventTable.cs" />
+    <Compile Remove="Data\Migrations\20180314074407_AddEventTable.Designer.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.1" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.1" PrivateAssets="All" />

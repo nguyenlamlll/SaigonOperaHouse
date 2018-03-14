@@ -25,5 +25,6 @@ namespace SOH.Web.Data
         public DbSet<Post> Posts { get; set; }
         public DbSet<Image> Images { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<Event> Events { get; set; }
     }
 }

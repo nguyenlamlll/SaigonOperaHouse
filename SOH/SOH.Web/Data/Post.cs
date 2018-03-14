@@ -12,10 +12,10 @@ namespace SOH.Web.Data
         public string Title { get; set; }
         public string Content { get; set; }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public DateTime Created { get; set; } = DateTime.UtcNow;
 
-        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        //[DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public DateTime LastAccessed { get; set; }
 
         public Guid ImageId { get; set; }

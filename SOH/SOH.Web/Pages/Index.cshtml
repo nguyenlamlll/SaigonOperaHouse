@@ -99,7 +99,7 @@
 }
 
 
-<div class="container">
+<div id="about" class="container">
 
     <!--Grid row-->
     <div class="row py-5">
@@ -126,7 +126,7 @@
 <div class="container">
     <div class="divider-new mt-5 mb-4">
         <h2 class="h3-responsive">
-            <strong>Section 1</strong>
+            <strong>UPCOMING ENTERTAINMENT</strong>
         </h2>
     </div>
     <!--Fetch upcoming events here-->
@@ -136,25 +136,25 @@
 <div class="container">
     <div class="divider-new mt-5 mb-4">
         <h2 class="h3-responsive">
-            <strong>Section 2</strong>
+            <strong>WHAT’S HAPPENING</strong>
         </h2>
     </div>
     <!--Fetch What's Hapenning posts here-->
 </div>
 
-<div class="container">
+@*<div class="container">
     <div class="divider-new mt-5 mb-4">
         <h2 class="h3-responsive">
             <strong>Section 3</strong>
         </h2>
     </div>
-</div>
+</div>*@
 
 <!--Section: Products v.2-->
 <div class="container">
     <div class="divider-new mt-5 mb-4">
         <h2 class="h3-responsive">
-            <strong>Section 4</strong>
+            <strong>OUR PRODUCTS</strong>
         </h2>
     </div>
     <section class="text-center pb-3 my-5">
@@ -300,7 +300,153 @@
             </div>
             <!--Grid column-->
         </div>
+
+        <div class="mt-4">
+            <a href="#" data-offset="90" class="btn btn-rounded btn-elegant waves-effect waves-light" style="visibility: visible;">
+                Read more
+            </a>
+        </div>
         <!--Grid row-->
     </section>
 </div>
 <!--Section: Products v.2-->
+<!--Section: Contact v.1-->
+<div class=" container">
+    <section class="py-3">
+
+        <!--Section heading-->
+        <h2 class="font-weight-bold text-center h1 py-5">Contact us</h2>
+        <!--Section description-->
+        <p class="text-center mb-5 pb-4">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet numquam iure provident voluptate
+            esse quasi, veritatis totam voluptas nostrum quisquam eum porro a pariatur accusamus veniam.
+        </p>
+
+        <div class="row">
+
+            <!--Grid column-->
+            <div class="col-lg-5 mb-4">
+
+                <!--Form with header-->
+                <div class="card">
+
+                    <div class="card-body">
+                        <!--Header-->
+                        <div class="form-header blue accent-1">
+                            <h3>
+                                <i class="fa fa-envelope"></i> Write to us:
+                            </h3>
+                        </div>
+
+                        <p>We'll write rarely, but only the best content.</p>
+                        <br>
+
+                        <!--Body-->
+                        <div class="md-form">
+                            <i class="fa fa-user prefix grey-text"></i>
+                            <input type="text" id="form-name" class="form-control">
+                            <label for="form-name">Your name</label>
+                        </div>
+
+                        <div class="md-form">
+                            <i class="fa fa-envelope prefix grey-text"></i>
+                            <input type="text" id="form-email" class="form-control">
+                            <label for="form-email">Your email</label>
+                        </div>
+
+                        <div class="md-form">
+                            <i class="fa fa-tag prefix grey-text"></i>
+                            <input type="text" id="form-Subject" class="form-control">
+                            <label for="form-Subject">Subject</label>
+                        </div>
+
+                        <div class="md-form">
+                            <i class="fa fa-pencil prefix grey-text"></i>
+                            <textarea type="text" id="form-text" class="form-control md-textarea" rows="3"></textarea>
+                            <label for="form-text">Your message</label>
+                        </div>
+
+                        <div class="text-center">
+                            <button class="btn btn-light-blue">Submit</button>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!--Form with header-->
+
+            </div>
+            <!--Grid column-->
+            <!--Grid column-->
+            <div class="col-lg-7">
+
+                <!--Google map-->
+                <div id="map-container" class="rounded z-depth-1-half map-container" style="height: 400px"></div>
+
+                <br>
+                <!--Buttons-->
+                <div class="row text-center">
+                    <div class="col-md-4">
+                        <a class="btn-floating deep-purple lighten-4 btn-circle">
+                            <i class="fa fa-map-marker"></i>
+                        </a>
+                        <p>Thanh Pho Ho Chi Minh, TP.HCM 700000</p>
+                        <p>Viet Nam</p>
+                    </div>
+
+                    <div class="col-md-4">
+                        <a class="btn-floating deep-purple lighten-4 btn-circle">
+                            <i class="fa fa-phone"></i>
+                        </a>
+                        <p>+ 028 3829 9976</p>
+                        <p>Mon - Fri, 8:00-22:00</p>
+                    </div>
+
+                    <div class="col-md-4">
+                        <a class="btn-floating deep-purple lighten-4 btn-circle">
+                            <i class="fa fa-envelope"></i>
+                        </a>
+                        <p>info@gmail.com</p>
+                        <p>sale@gmail.com</p>
+                    </div>
+                </div>
+
+            </div>
+            <!--Grid column-->
+
+        </div>
+
+    </section>
+</div>
+<!--Section: Contact v.1-->
+
+@section Scripts {
+    <!--Google Maps-->
+    <script src="https://maps.google.com/maps/api/js"></script>
+    <script>
+        function init_map() {
+
+            var var_location = new google.maps.LatLng(10.776512, 106.703082);
+
+            var var_mapoptions = {
+                center: var_location,
+
+                zoom: 16
+            };
+
+            var var_marker = new google.maps.Marker({
+                position: var_location,
+                map: var_map,
+                title: "Saigon Opera House"
+            });
+
+            var var_map = new google.maps.Map(document.getElementById("map-container"),
+                var_mapoptions);
+
+            var_marker.setMap(var_map);
+
+        }
+
+        google.maps.event.addDomListener(window, 'load', init_map);
+    </script>
+}
