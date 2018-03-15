@@ -18,10 +18,12 @@ namespace SOH.Web.Data
         //[DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public DateTime LastAccessed { get; set; }
 
-        public Guid ImageId { get; set; }
+        [ForeignKey("Image")]
+        public Guid? ImageId { get; set; }
         public Image Image { get; set; }
 
-        public int ApplicationUserId { get; set; }
+        [ForeignKey("ApplicationUser")]
+        public Guid ApplicationUserId { get; set; }
         public ApplicationUser ApplicationUser { get; set; }
 
     }

@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en" class="full-height">
+<html lang="en" class="@ViewData["HtmlClass"]">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,8 +15,68 @@
     <link href="~/css/style.css" rel="stylesheet">
 
     @RenderSection("Styles", required: false)
+
+    <style>
+        .top-nav-collapse {
+            background-color: #563e91 !important;
+        }
+
+        .navbar:not(.top-nav-collapse) {
+            background: transparent !important;
+        }
+
+        @@media (max-width: 768px) {
+            .navbar:not(.top-nav-collapse) {
+                background: #563e91 !important;
+            }
+        }
+
+        .rgba-gradient {
+            background: -moz-linear-gradient(45deg, rgba(213, 15, 61, 0.6), rgba(13, 17, 198, 0.69) 100%);
+            background: -webkit-linear-gradient(45deg, rgba(213, 15, 61, 0.6), rgba(13, 17, 198, 0.69) 100%);
+            background: linear-gradient(to 45deg, rgba(213, 15, 61, 0.6), rgba(13, 17, 198, 0.69) 100%);
+        }
+
+        video {
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+
+    <style type="text/css">
+        /* Chart.js */
+        @@-webkit-keyframes chartjs-render-animation {
+            from {
+                opacity: 0.99
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        @@keyframes chartjs-render-animation {
+            from {
+                opacity: 0.99
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        .chartjs-render-monitor {
+            -webkit-animation: chartjs-render-animation 0.001s;
+            animation: chartjs-render-animation 0.001s;
+        }
+    </style>
 </head>
-<body data-gr-c-s-loaded="true">
+<body id="home" data-gr-c-s-loaded="true" class="@ViewData["BodyClass"]" style="@ViewData["BodyStyle"]">
     @*<nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
             <div class="container">
                     <div class="navbar-header">
@@ -40,15 +100,15 @@
         </nav>*@
     <header>
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar @ViewData["NavClass"]">
             <div class="container">
-                <a asp-page="/">
+                <a asp-page="/Index">
                     <img src="~/img/SGOperaHouse1.jpg"
                          class="img-fluid rounded-circle" style="height:50px;"
                          alt="Saigon Opera House" />
-                </a>
 
-                @*<a class="navbar-brand" href="#"></a>*@
+                </a>
+                <a class="navbar-brand white-text mb-1 ml-1">Opera House</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -64,18 +124,6 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#about" data-offset="90">About</a>
                         </li>
-                        @*<li class="nav-item">
-                                <a class="nav-link" href="#features" data-offset="90">Features</a>
-                            </li>*@
-                        @*<li class="nav-item">
-                                <a class="nav-link" href="#services" data-offset="90">Services</a>
-                            </li>*@
-                        @*<li class="nav-item">
-                                <a class="nav-link" href="#opinions" data-offset="30">Opinions</a>
-                            </li>*@
-                        @*<li class="nav-item">
-                                <a class="nav-link" href="#team" data-offset="90">Team</a>
-                            </li>*@
                         <li class="nav-item">
                             <a class="nav-link" href="#contact" data-offset="90">Event</a>
                         </li>
@@ -86,7 +134,7 @@
                             <a class="nav-link" href="#contact" data-offset="90">Contact</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#contact" data-offset="90">Blog</a>
+                            <a class="nav-link" href="/blog" data-offset="90">Blog</a>
                         </li>
                     </ul>
                     <!-- Social Icon  -->

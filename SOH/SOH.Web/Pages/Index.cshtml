@@ -1,69 +1,11 @@
 ﻿@page
 @model IndexModel
 @{
+    ViewData["HtmlClass"] = "full-height";
     ViewData["Title"] = "Home page";
 }
 @section Styles {
-    <style type="text/css">
 
-        .top-nav-collapse {
-            background-color: #563e91 !important;
-        }
-
-        .navbar:not(.top-nav-collapse) {
-            background: transparent !important;
-        }
-
-        @@media (max-width: 768px) {
-            .navbar:not(.top-nav-collapse) {
-                background: #563e91 !important;
-            }
-        }
-
-        .rgba-gradient {
-            background: -moz-linear-gradient(45deg, rgba(213, 15, 61, 0.6), rgba(13, 17, 198, 0.69) 100%);
-            background: -webkit-linear-gradient(45deg, rgba(213, 15, 61, 0.6), rgba(13, 17, 198, 0.69) 100%);
-            background: linear-gradient(to 45deg, rgba(213, 15, 61, 0.6), rgba(13, 17, 198, 0.69) 100%);
-        }
-
-        video {
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-    </style>
-
-    <style type="text/css">
-        /* Chart.js */
-        @@-webkit-keyframes chartjs-render-animation {
-            from {
-                opacity: 0.99
-            }
-
-            to {
-                opacity: 1
-            }
-        }
-
-        @@keyframes chartjs-render-animation {
-            from {
-                opacity: 0.99
-            }
-
-            to {
-                opacity: 1
-            }
-        }
-
-        .chartjs-render-monitor {
-            -webkit-animation: chartjs-render-animation 0.001s;
-            animation: chartjs-render-animation 0.001s;
-        }
-    </style>
 }
 
 
@@ -126,7 +68,7 @@
 <div class="container">
     <div class="divider-new mt-5 mb-4">
         <h2 class="h3-responsive">
-            <strong>UPCOMING ENTERTAINMENT</strong>
+            <strong>UPCOMING EVENTS</strong>
         </h2>
     </div>
     <!--Fetch upcoming events here-->
@@ -310,8 +252,9 @@
     </section>
 </div>
 <!--Section: Products v.2-->
+
 <!--Section: Contact v.1-->
-<div class=" container">
+<div id="contact" class="container">
     <section class="py-3">
 
         <!--Section heading-->

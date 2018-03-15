@@ -118,7 +118,7 @@ namespace SOH.Web.Pages.Account.Manage
             }
 
             var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
-            var callbackUrl = Url.EmailConfirmationLink(user.Id, code, Request.Scheme);
+            var callbackUrl = Url.EmailConfirmationLink(user.Id.ToString(), code, Request.Scheme);
             await _emailSender.SendEmailConfirmationAsync(user.Email, callbackUrl);
 
             StatusMessage = "Verification email sent. Please check your email.";

@@ -6,6 +6,10 @@
   <ItemGroup>
     <Compile Remove="Data\Migrations\20180314074407_AddEventTable.cs" />
     <Compile Remove="Data\Migrations\20180314074407_AddEventTable.Designer.cs" />
+    <Compile Remove="Data\Migrations\20180315033703_FixTypes.cs" />
+    <Compile Remove="Data\Migrations\20180315033703_FixTypes.Designer.cs" />
+    <Compile Remove="Data\Migrations\20180315034210_FixTypes.cs" />
+    <Compile Remove="Data\Migrations\20180315034210_FixTypes.Designer.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.3" />
