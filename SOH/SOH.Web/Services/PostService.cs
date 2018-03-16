@@ -36,7 +36,7 @@ namespace SOH.Web.Services
 
         List<Post> IPostService.GetAllPost()
         {
-            throw new NotImplementedException();
+            return postRepository.GetAll();
         }
     }
 }

@@ -16,6 +16,19 @@
 
 <div class="purple lighten-5" style="height:100vh;">
     <h1>BLOG</h1>
+
+    <div class="container">
+        @foreach (var post in Model.Posts)
+        {
+            <div class="text-center">
+                <h3>@post.Title</h3>
+                <p class="lead">
+                    @post.Content
+                </p>
+            </div>
+
+        }
+    </div>
 </div>
 
 

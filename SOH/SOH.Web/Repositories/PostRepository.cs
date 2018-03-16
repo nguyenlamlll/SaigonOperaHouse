@@ -27,7 +27,8 @@ namespace SOH.Web.Repositories
         List<Post> IPostRepository.GetAll()
         {
             return dbContext.Posts
-                .Include(p => p.ApplicationUser.Id).Include(p => p.ApplicationUser.UserName)
+                .Include(p => p.ApplicationUser)
+                .Include(p => p.Image)
                 .ToList();
         }
     }
