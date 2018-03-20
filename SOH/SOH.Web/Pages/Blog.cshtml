@@ -14,17 +14,27 @@
 }
 
 
-<div class="purple lighten-5" style="height:100vh;">
-    <h1>BLOG</h1>
+<div class="purple lighten-5" style="height:100%;">
 
     <div class="container">
         @foreach (var post in Model.Posts)
         {
-            <div class="text-center">
-                <h3>@post.Title</h3>
+            <div class="text-center py-5 font-weight-bold">
+                <h2>@post.Title</h2>
+                <p class="text-muted font-italic">@post.Created.Day/@post.Created.Month/@post.Created.Year</p>
                 <p class="lead">
                     @post.Content
                 </p>
+                @if (post.Image != null)
+                {
+                    <img src="@post.Image.URI" />
+                }
+                <div class="row py-3 center-block flex-center">
+                    <a class="btn btn-outline-dark" asp-page="/Post/Details" asp-route-id="@post.Id">
+                        Read More
+                    </a>
+                </div>
+
             </div>
 
         }
