@@ -2,11 +2,18 @@
 @model RegisterModel
 @{
     ViewData["Title"] = "Register";
+    ViewData["NavClass"] = "top-nav-collapse";
 }
-
-<h2>@ViewData["Title"]</h2>
-
-<div class="row">
+@section Styles
+    {
+    <style>
+        body {
+            padding-top: 100px;
+        }
+    </style>
+}
+<div class="container">
+    <h2 class="text-center">@ViewData["Title"]</h2>
     <div class="col-md-4">
         <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
             <h4>Create a new account.</h4>
