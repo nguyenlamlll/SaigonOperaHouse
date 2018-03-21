@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace SOH.Web.Pages.Admin_Dashboard
+namespace SOH.Web.Pages.Admin
 {
     public class IndexModel : PageModel
     {
