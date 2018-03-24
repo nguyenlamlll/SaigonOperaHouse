@@ -1,9 +1,135 @@
 ﻿@page
-@model AboutModel
+@model SOH.Web.Pages.AboutModel
 @{
     ViewData["Title"] = "About";
+    ViewData["NavClass"] = "scrolling-navbar";
+    ViewData["HtmlClass"] = "full-height";
 }
-<h2>@ViewData["Title"]</h2>
-<h3>@Model.Message</h3>
 
-<p>Use this area to provide additional information.</p>
+
+@section Header {
+    <!-- Video -->
+<section class="view">
+    <!--Carousel Wrapper-->
+    <div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
+        <!--Indicators-->
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-1z" data-slide-to="1"></li>
+            <li data-target="#carousel-example-1z" data-slide-to="2"></li>
+        </ol>
+        <!--/.Indicators-->
+        <!--Slides-->
+        <div class="carousel-inner" role="listbox">
+            <!--First slide-->
+            <div class="carousel-item active">
+                <img class="d-block w-100" src="~/img/SGOperaHouse3.jpg"  alt="First slide">
+            </div>
+            <!--/First slide-->
+            <!--Second slide-->
+            <div class="carousel-item">
+                <img class="d-block w-100" src="~/img/inside.png" alt="Second slide">
+            </div>
+            <!--/Second slide-->
+            <!--Third slide-->
+            <div class="carousel-item">
+                <img class="d-block w-100" src="~/img/publicShow.jpg" alt="Third slide">
+            </div>
+            <!--/Third slide-->
+        </div>
+        <!--/.Slides-->
+    </div>
+    <!--/.Carousel Wrapper-->
+
+    <div class="full-bg-img">
+        <div class="mask rgba-gradient">
+            <div class="container flex-center">
+                <div class="row pt-5 mt-3">
+                    <div class="col-md-12 white-text text-center smooth-scroll">
+                        <div class="wow fadeInDown" data-wow-delay="0.2s" style="visibility: visible; animation-name: fadeInDown; animation-delay: 0.2s;">
+                            <h3 class="display-3 font-weight-bold white-text mb-2">Our Story</h3>
+                            <hr class="hr-light my-4">
+                            <h4 class="subtext-header mt-2 mb-4">
+                                In 1898, the Opera House was started right next to the old theater and on January 1, 1900, it was inaugurated
+                            </h4>
+                        </div>
+                        <a href="#history" data-offset="90" class="btn btn-rounded btn-outline-white wow fadeInUp waves-effect waves-light" data-wow-delay="0.2s" style="visibility: visible; animation-name: fadeInUp; animation-delay: 0.2s;">
+                            <i class="fa fa-eye"> Dicovery 
+                            </i> 
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+}
+
+
+
+<!--Projects section v.4-->
+<section id="history" class="section pb-3">
+
+    @*<!--Section heading-->
+    <h2 class="section-heading h1 pt-4"><strong>House History</strong></h2>
+    <!--Section description-->*@
+
+    <!--Grid row-->
+    <div class="row">
+
+        <!--Grid column-->
+        <div class="col-md-12">
+            <div class="card card-image" style="background-image: url(https://www.sydneyoperahouse.com/content/dam/soh/our-story/google-cultural-institution/GCI_Exhibits%20with%20Google_Hero_The%20Unseen%20House.jpg.image.1800.600.high.jpg);">
+                <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
+                    <div>
+                        <h6 class="purple-text"><i class="fa fa-eye"></i><strong> Subsidies </strong></h6>
+                        <h3 class="card-title py-3 font-weight-bold"><strong>The subsidy from Lyon in France</strong></h3>
+                        <p class="pb-3">
+                            The project was completed by the end of 2009. The company organized the performance of the show received €160,000 in subsidies from the City of Lyon (France) to equip the night lighting system...
+                        </p>
+                        <a href="https://vi.wikipedia.org/wiki/Nh%C3%A0_h%C3%A1t_Th%C3%A0nh_ph%E1%BB%91_H%E1%BB%93_Ch%C3%AD_Minh" class="btn btn-secondary btn-rounded"><i class="fa fa-clone left"></i> Read more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Grid column-->
+
+    </div>
+    <!--Grid row-->
+
+    <div class="row">
+        <!--Grid column-->
+        <div class="col-lg-6 col-md-6">
+            <div class="card card-image d-flex" style="background-image: url(http://www.vietfuntravel.com.vn/image/data/sai-gon/tham-quan-nha-hat-tp-hcm-2.jpg);">
+                <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
+                    <div>
+                        <h6 class="pink-text"><i class="fa fa-eye"></i><strong>Structures</strong></h6>
+                        <h3 class="card-title py-3 font-weight-bold"><strong>Saigon Theater holds a unique feature</strong></h3>
+                        <p class="pb-3 d-flex">
+                            Saigon Opera House is an architectural counterweight to the Hanoi Opera House (built in 1911, architectural model Opéra Garnier in Paris, 900 seats, architect Broger et Harloy)...
+                        </p>
+                        <a href="https://vi.wikipedia.org/wiki/Nh%C3%A0_h%C3%A1t_Th%C3%A0nh_ph%E1%BB%91_H%E1%BB%93_Ch%C3%AD_Minh" class="btn btn-pink btn-rounded"><i class="fa fa-clone left"></i> Read more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Grid column-->
+        <!--Grid column-->
+        <div class="col-lg-6 col-md-6">
+            <div class="card card-image" style="background-image: url(https://upload.wikimedia.org/wikipedia/vi/thumb/1/12/Tuongtuyquanlucchien.jpg/250px-Tuongtuyquanlucchien.jpg);">
+                <div class="d-flex text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
+                    <div>
+                        <h6 class="green-text"><i class="fa fa-eye"></i><strong> Related stories</strong></h6>
+                        <h3 class="card-title py-3 font-weight-bold"><strong>Flower Garden Theater</strong></h3>
+                        <p class="pb-3 d-flex">
+                            Primitive, flower garden in front of the Theater without a monument. In 1967, the government of the Second Republic of Vietnam built a 9m high maritime monument, in the direction of the head of the House of Representatives. Contemporary media for it is an ominous sign that the military "guns" into Congress...
+                        </p>
+                        <a href="https://vi.wikipedia.org/wiki/Nh%C3%A0_h%C3%A1t_Th%C3%A0nh_ph%E1%BB%91_H%E1%BB%93_Ch%C3%AD_Minh" class="btn btn-success btn-rounded"><i class="fa fa-clone left"></i> Read more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Grid column-->
+    </div>
+</section>
+<!--Projects section v.4-->
