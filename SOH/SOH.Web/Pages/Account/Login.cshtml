@@ -2,14 +2,21 @@
 @model LoginModel
 
 @{
-    Layout = null;
     ViewData["Title"] = "Log in";
+    ViewData["NavClass"] = "top-nav-collapse";
 }
-
-<h2>@ViewData["Title"]</h2>
+@section Styles
+    {
+    <style>
+        body {
+            padding-top: 100px;
+        }
+    </style>
+}
 <div class="container">
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
             <section>
                 <form method="post">
                     <h4>Use a local account to log in.</h4>
@@ -47,8 +54,8 @@
                 </form>
             </section>
         </div>
-        <div class="col-md-6 col-md-offset-2">
-            <section>
+        <div class="col-md-3">
+            @*<section>
                 <h4>Use another service to log in.</h4>
                 <hr />
                 @{
@@ -75,7 +82,7 @@
                         </form>
                     }
                 }
-            </section>
+            </section>*@
         </div>
     </div>
 </div>
