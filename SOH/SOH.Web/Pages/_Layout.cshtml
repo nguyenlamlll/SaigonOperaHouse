@@ -160,11 +160,12 @@
                             <a class="nav-link"></a>
                             <!--Empty space for layout-->
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-page="/Account/LogIn">
-                                Log In
-                            </a>
-                        </li>
+                        @await Html.PartialAsync("_LoginPartial")
+                        @*<li class="nav-item">
+            <a class="nav-link" asp-page="/Account/LogIn">
+                Log In
+            </a>
+        </li>*@
                     </ul>
                 </div>
             </div>
