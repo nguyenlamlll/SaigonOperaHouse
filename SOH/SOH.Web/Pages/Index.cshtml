@@ -76,148 +76,148 @@
     <!--Fetch upcoming events here-->
     <section class="py-5">
         @{
-        int index = 0;
+            int index = 0;
 
-        foreach (var item in Model.Events)
-        {
-            if (item == Model.Events.First())
+            foreach (var item in Model.Events)
             {
+                if (item == Model.Events.First())
+                {
 
-            }
-            else
-            {
-                <hr class="mb-5 mt-5 pb-3">
-        }
-
-
-        if (index % 2 != 0)
-        {
-            <!--Grid row-->
-            <div class="row">
-
-                <!--Grid column-->
-                <div class="col-lg-7 col-xl-7">
-                    <!--Excerpt-->
-
-                    <h3 class="mb-4 font-weight-bold dark-grey-text">
-                        <strong>
-                            @item.Title
-                        </strong>
-                    </h3>
-                    <p>
-                        @item.Description
-                    </p>
-                    <p>
-                        Start
-                        <a>
-                            <strong>
-                                @item.StartingDate
-                            </strong>
-                        </a>
-                    </p>
-
-                    <p>
-                        End
-                        <a>
-                            <strong>
-                                @item.EndingDate
-                            </strong>
-                        </a>
-                    </p>
-
-                    <a href="./Event/Details?id=@item.Id" class="btn btn-elegant btn-md mb-3">Buy Tickets</a>
-                </div>
-                <!--Grid column-->
-                <!--Grid column-->
-                <div class="col-lg-5 col-xl-5 pb-3">
-                    <!--Featured image-->
-                    <div class="view overlay rounded z-depth-2">
-                        @if (@item.Images.Count != 0)
-                    {
-                        <img src="@item.Images.FirstOrDefault().URI" alt="Sample image for first version of blog listing"
-                             class="img-fluid">
                 }
                 else
                 {
-                    <img src="https://static.wixstatic.com/media/51d37609a63e4327abc37d9e89319699.jpg/v1/fill/w_490,h_300,al_c,q_80,usm_0.66_1.00_0.01/51d37609a63e4327abc37d9e89319699.webp" alt="Sample image for first version of blog listing"
-                         class="img-fluid">
-            }
+                    <hr class="mb-5 mt-5 pb-3">
+                }
 
-                        <a>
-                            <div class="mask rgba-white-slight"></div>
-                        </a>
-                    </div>
-                </div>
-                <!--Grid column-->
-            </div>
-            <!--Grid row-->
-    }
-    else
-    {
-        <!--Grid row-->
-        <div class="row">
 
-            <!--Grid column-->
-            <div class="col-lg-5 col-xl-5 pb-3">
-                <!--Featured image-->
-                <div class="view overlay rounded z-depth-2">
-                    @if (@item.Images.Count != 0)
+                if (index % 2 != 0)
                 {
-                    <img src="@item.Images.FirstOrDefault().URI" alt="Sample image for first version of blog listing"
-                         class="img-fluid">
+                    <!--Grid row-->
+                    <div class="row">
+
+                        <!--Grid column-->
+                        <div class="col-lg-7 col-xl-7">
+                            <!--Excerpt-->
+
+                            <h3 class="mb-4 font-weight-bold dark-grey-text">
+                                <strong>
+                                    @item.Title
+                                </strong>
+                            </h3>
+                            <p>
+                                @item.Description
+                            </p>
+                            <p>
+                                Start
+                                <a>
+                                    <strong>
+                                        @item.StartingDate
+                                    </strong>
+                                </a>
+                            </p>
+
+                            <p>
+                                End
+                                <a>
+                                    <strong>
+                                        @item.EndingDate
+                                    </strong>
+                                </a>
+                            </p>
+
+                            <a href="./Event/Details?id=@item.Id" class="btn btn-elegant btn-md mb-3">Buy Tickets</a>
+                        </div>
+                        <!--Grid column-->
+                        <!--Grid column-->
+                        <div class="col-lg-5 col-xl-5 pb-3">
+                            <!--Featured image-->
+                            <div class="view overlay rounded z-depth-2">
+                                @if (@item.Images.Count != 0)
+                                {
+                                    <img src="@item.Images.FirstOrDefault().URI" alt="Sample image for first version of blog listing"
+                                         class="img-fluid">
+                                }
+                                else
+                                {
+                                    <img src="https://static.wixstatic.com/media/51d37609a63e4327abc37d9e89319699.jpg/v1/fill/w_490,h_300,al_c,q_80,usm_0.66_1.00_0.01/51d37609a63e4327abc37d9e89319699.webp" alt="Sample image for first version of blog listing"
+                                         class="img-fluid">
+                                }
+
+                                <a>
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+                        </div>
+                        <!--Grid column-->
+                    </div>
+                    <!--Grid row-->
+                }
+                else
+                {
+                    <!--Grid row-->
+                    <div class="row">
+
+                        <!--Grid column-->
+                        <div class="col-lg-5 col-xl-5 pb-3">
+                            <!--Featured image-->
+                            <div class="view overlay rounded z-depth-2">
+                                @if (@item.Images.Count != 0)
+                                {
+                                    <img src="@item.Images.FirstOrDefault().URI" alt="Sample image for first version of blog listing"
+                                         class="img-fluid">
+                                }
+                                else
+                                {
+                                    <img src="https://static.wixstatic.com/media/51d37609a63e4327abc37d9e89319699.jpg/v1/fill/w_490,h_300,al_c,q_80,usm_0.66_1.00_0.01/51d37609a63e4327abc37d9e89319699.webp" alt="Sample image for first version of blog listing"
+                                         class="img-fluid">
+                                }
+
+                                <a>
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+                        </div>
+                        <!--Grid column-->
+                        <!--Grid column-->
+                        <div class="col-lg-7 col-xl-7">
+                            <!--Excerpt-->
+
+                            <h3 class="mb-4 font-weight-bold dark-grey-text">
+                                <strong>
+                                    @item.Title
+                                </strong>
+                            </h3>
+                            <p>
+                                @item.Description
+                            </p>
+                            <p>
+                                Start
+                                <a>
+                                    <strong>
+                                        @item.StartingDate
+                                    </strong>
+                                </a>
+                            </p>
+
+                            <p>
+                                End
+                                <a>
+                                    <strong>
+                                        @item.EndingDate
+                                    </strong>
+                                </a>
+                            </p>
+
+                            <a href="./Event/Details?id=@item.Id" class="btn btn-elegant btn-md mb-3">Buy Tickets</a>
+                        </div>
+                        <!--Grid column-->
+
+                    </div>
+                    <!--Grid row-->
+                }
+
+                index++;
             }
-            else
-            {
-                <img src="https://static.wixstatic.com/media/51d37609a63e4327abc37d9e89319699.jpg/v1/fill/w_490,h_300,al_c,q_80,usm_0.66_1.00_0.01/51d37609a63e4327abc37d9e89319699.webp" alt="Sample image for first version of blog listing"
-                     class="img-fluid">
-        }
-
-                    <a>
-                        <div class="mask rgba-white-slight"></div>
-                    </a>
-                </div>
-            </div>
-            <!--Grid column-->
-            <!--Grid column-->
-            <div class="col-lg-7 col-xl-7">
-                <!--Excerpt-->
-
-                <h3 class="mb-4 font-weight-bold dark-grey-text">
-                    <strong>
-                        @item.Title
-                    </strong>
-                </h3>
-                <p>
-                    @item.Description
-                </p>
-                <p>
-                    Start
-                    <a>
-                        <strong>
-                            @item.StartingDate
-                        </strong>
-                    </a>
-                </p>
-
-                <p>
-                    End
-                    <a>
-                        <strong>
-                            @item.EndingDate
-                        </strong>
-                    </a>
-                </p>
-
-                <a href="./Event/Details?id=@item.Id" class="btn btn-elegant btn-md mb-3">Buy Tickets</a>
-            </div>
-            <!--Grid column-->
-
-        </div>
-        <!--Grid row-->
-}
-
-index++;
-}
         }
     </section>
 </div>
@@ -230,7 +230,17 @@ index++;
         </h2>
     </div>
     <!--Fetch What's Hapenning posts here-->
-
+    <section class="py-3">
+        @{
+            foreach (var post in Model.Posts)
+            {
+                <div class="py-2 text-center">
+                    <a asp-page="/Post/Details" asp-route-id="@post.Id"><h3>@post.Title</h3></a>
+                    
+                </div>
+            }
+        }
+    </section>
 </div>
 
 @*<div class="container">
