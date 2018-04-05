@@ -27,7 +27,7 @@ namespace SOH.Web.Pages.Event
                 return NotFound();
             }
 
-            Event = await _context.Events.SingleOrDefaultAsync(m => m.Id == id);
+            Event = await _context.Events.Include(e => e.Images).SingleOrDefaultAsync(m => m.Id == id);
 
             if (Event == null)
             {
