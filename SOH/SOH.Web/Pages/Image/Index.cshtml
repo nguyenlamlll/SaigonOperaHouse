@@ -16,14 +16,18 @@
 <div class="container">
     <h2>Manage Images</h2>
 
-    <p>
-        <a asp-page="Create">Create New</a>
-    </p>
-    <table class="table">
-        <thead>
+    <div class="container py-1">
+        <a asp-page="Create" class="btn btn-primary btn-rounded btn-md my-1"><i class="fa fa-pencil-square-o mr-1" aria-hidden="true"></i> Create New</a>
+    </div>
+
+    <table class="table table-bordered table-hover table-responsive-lg" style="table-layout: fixed; word-wrap: break-word;">
+        <thead class="blue-grey lighten-4">
             <tr>
                 <th>
                     @Html.DisplayNameFor(model => model.Image[0].URI)
+                </th>
+                <th>
+                    Preview
                 </th>
                 <th></th>
             </tr>
@@ -36,9 +40,12 @@
                         @Html.DisplayFor(modelItem => item.URI)
                     </td>
                     <td>
-                        <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                        <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                        <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                        <img src="@item.URI" width="300"/>
+                    </td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-primary btn-rounded btn-sm my-1">Edit</a>
+                        <a asp-page="./Details" asp-route-id="@item.Id" class="btn btn-primary btn-rounded btn-sm my-1">Details</a>
+                        <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-danger btn-rounded btn-sm my-1">Delete</a>
                     </td>
                 </tr>
             }
