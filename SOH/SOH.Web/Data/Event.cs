@@ -14,6 +14,11 @@ namespace SOH.Web.Data
         public DateTime StartingDate { get; set; }
         public DateTime? EndingDate { get; set; }
 
+        public string TicketInformation { get; set; }
+        public string TimeInformation { get; set; }
+        public string AgeInformation { get; set; }
+        public string CategoryInformation { get; set; }
+
         public ICollection<Image> Images { get; set; }
     }
 }

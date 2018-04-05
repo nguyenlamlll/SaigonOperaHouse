@@ -46,6 +46,30 @@
                     <span asp-validation-for="Event.EndingDate" class="text-danger"></span>
                 </div>
                 <div class="form-group">
+                    <label asp-for="Event.TicketInformation" class="control-label"></label>
+                    <input asp-for="Event.TicketInformation" class="form-control" />
+                    <span asp-validation-for="Event.TicketInformation" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Event.TimeInformation" class="control-label"></label>
+                    <input asp-for="Event.TimeInformation" class="form-control" />
+                    <span asp-validation-for="Event.TimeInformation" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Event.AgeInformation" class="control-label"></label>
+                    <input asp-for="Event.AgeInformation" class="form-control" />
+                    <span asp-validation-for="Event.AgeInformation" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Event.CategoryInformation" class="control-label"></label>
+                    <input asp-for="Event.CategoryInformation" class="form-control" />
+                    <span asp-validation-for="Event.CategoryInformation" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Event.Images" class="control-label"></label>
+                    <select asp-for="Event.Images" class="form-control py-1" asp-items="ViewBag.ImageId"></select>
+                </div>
+                <div class="form-group">
                     <input type="submit" value="Save" class="btn btn-default" />
                 </div>
             </form>

@@ -11,9 +11,10 @@ using System;
 namespace SOH.Web.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180405072448_UpdateEventTable")]
+    partial class UpdateEventTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -243,9 +244,7 @@ namespace SOH.Web.Migrations
 
                     b.HasIndex("ApplicationUserId");
 
-                    b.HasIndex("ImageId")
-                        .IsUnique()
-                        .HasFilter("[ImageId] IS NOT NULL");
+                    b.HasIndex("ImageId");
 
                     b.ToTable("Posts");
                 });
@@ -313,11 +312,11 @@ namespace SOH.Web.Migrations
 
             modelBuilder.Entity("SOH.Web.Data.Image", b =>
                 {
-                    b.HasOne("SOH.Web.Data.Event", "Event")
+                    b.HasOne("SOH.Web.Data.Event")
                         .WithMany("Images")
                         .HasForeignKey("EventId");
 
-                    b.HasOne("SOH.Web.Data.Product", "Product")
+                    b.HasOne("SOH.Web.Data.Product")
                         .WithMany("Images")
                         .HasForeignKey("ProductId");
                 });
@@ -330,8 +329,8 @@ namespace SOH.Web.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("SOH.Web.Data.Image", "Image")
-                        .WithOne("Post")
-                        .HasForeignKey("SOH.Web.Data.Post", "ImageId");
+                        .WithMany()
+                        .HasForeignKey("ImageId");
                 });
 #pragma warning restore 612, 618
         }

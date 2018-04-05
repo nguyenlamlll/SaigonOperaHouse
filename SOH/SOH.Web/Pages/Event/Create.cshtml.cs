@@ -20,11 +20,19 @@ namespace SOH.Web.Pages.Event
 
         public IActionResult OnGet()
         {
+            Images = _context.Images.ToList();
+            ViewData["ImageId"] = new SelectList(_context.Images, "Id", "Id");
+
             return Page();
         }
 
         [BindProperty]
         public Data.Event Event { get; set; }
+
+        /// <summary>
+        /// Existing images from database
+        /// </summary>
+        public IList<Data.Image> Images { get; set; }
 
         public async Task<IActionResult> OnPostAsync()
         {
@@ -34,6 +42,10 @@ namespace SOH.Web.Pages.Event
             }
 
             _context.Events.Add(Event);
+            //foreach(var image in Event.Images)
+            //{
+            //    var updatedImage = _context.Images.Find(image.Id);
+            //}
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

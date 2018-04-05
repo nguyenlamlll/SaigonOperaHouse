@@ -36,6 +36,18 @@
                 <th>
                     @Html.DisplayNameFor(model => model.Event[0].EndingDate)
                 </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Event[0].TicketInformation)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Event[0].TimeInformation)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Event[0].AgeInformation)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Event[0].CategoryInformation)
+                </th>
                 <th></th>
             </tr>
         </thead>
@@ -54,6 +66,18 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.EndingDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TicketInformation)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TimeInformation)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AgeInformation)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CategoryInformation)
                 </td>
                 <td>
                     <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-primary btn-rounded btn-sm my-1">Edit</a>
