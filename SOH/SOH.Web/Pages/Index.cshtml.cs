@@ -42,5 +42,7 @@ namespace SOH.Web.Pages
                 Posts = Posts.Take(4).ToList();
             }
         }
+
+
     }
 }
