@@ -37,6 +37,10 @@
                 </div>
                 <div class="form-group">
                     <label asp-for="Post.ImageId" class="control-label"></label>
+                    <a href="~/Image/Create" id="addButton" class="btn btn-sm btn-outline-blue-grey">
+                        <i class="fa fa-plus fa-3x" aria-hidden="true"></i>
+                        Add image
+                    </a>
                     <select asp-for="Post.ImageId" class="form-control" asp-items="ViewBag.ImageId"></select>
                 </div>
                 @*<div class="form-group">

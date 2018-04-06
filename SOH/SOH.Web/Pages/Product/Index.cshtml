@@ -15,13 +15,14 @@
 }
 
 <div class="container">
-    <h2>Index</h2>
+    <h2>List Products</h2>
 
-    <p>
-        <a asp-page="Create">Create New</a>
-    </p>
-    <table class="table">
-        <thead>
+    <div class="container py-1">
+        <a asp-page="Create" class="btn btn-primary btn-rounded btn-md my-1"><i class="fa fa-pencil-square-o mr-1" aria-hidden="true"></i> Create New</a>
+    </div>
+
+    <table class="table table-bordered table-hover table-responsive-lg">
+        <thead class="blue-grey lighten-4">
             <tr>
                 <th>
                     @Html.DisplayNameFor(model => model.Product[0].Title)
@@ -37,24 +38,24 @@
         </thead>
         <tbody>
             @foreach (var item in Model.Product)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Title)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Price)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.StockQuantity)
-                    </td>
-                    <td>
-                        <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                        <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                        <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
-                    </td>
-                </tr>
-            }
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StockQuantity)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-primary btn-rounded btn-sm my-1">Edit</a>
+                    <a asp-page="./Details" asp-route-id="@item.Id" class="btn btn-primary btn-rounded btn-sm my-1">Details</a>
+                    <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-danger btn-rounded btn-sm my-1">Delete</a>
+                </td>
+            </tr>
+    }
         </tbody>
     </table>
 </div>
