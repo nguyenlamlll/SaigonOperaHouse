@@ -7,8 +7,10 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using SOH.Web.Data;
 using SOH.Web.Services;
+using SOH.Web.Validation;
 
 namespace SOH.Web.Pages.Account
 {
@@ -18,17 +20,19 @@ namespace SOH.Web.Pages.Account
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly ILogger<LoginModel> _logger;
         private readonly IEmailSender _emailSender;
-
+        private readonly IOptions<AppConfiguration> _options;
         public RegisterModel(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
             ILogger<LoginModel> logger,
-            IEmailSender emailSender)
+            IEmailSender emailSender,
+            IOptions<AppConfiguration> options)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _logger = logger;
             _emailSender = emailSender;
+            _options = options;
         }
 
         [BindProperty]
@@ -53,6 +57,11 @@ namespace SOH.Web.Pages.Account
             [Display(Name = "Confirm password")]
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
+
+            [Required]
+            [DataType(DataType.Password)]
+            [Display(Name = "Admin Key")]
+            public string AdminKey { get; set; }
         }
 
         public void OnGet(string returnUrl = null)
@@ -65,6 +74,12 @@ namespace SOH.Web.Pages.Account
             ReturnUrl = returnUrl;
             if (ModelState.IsValid)
             {
+                if (Input.AdminKey != _options.Value.AdminKey)
+                {
+                    ModelState.AddModelError("Authentication", "Provided Admin Key is not correct.");
+                    return Page();
+                }
+
                 var user = new ApplicationUser { UserName = Input.Email, Email = Input.Email };
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)

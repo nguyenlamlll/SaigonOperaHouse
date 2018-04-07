@@ -30,6 +30,8 @@ namespace SOH.Web
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+            services.Configure<AppConfiguration>(Configuration.GetSection("App"));
+
             services.AddIdentity<ApplicationUser, IdentityRole<Guid>>(options =>
                 {
                     options.Password.RequireDigit = true;
