@@ -269,7 +269,7 @@
                 <div class="card card-cascade wider card-ecommerce">
                     <!--Card image-->
                     <div class="view overlay">
-                        <img src="https://static.wixstatic.com/media/ab128b_291d713ab1ea4929811849dea5769373~mv2.jpg/v1/fill/w_459,h_459,q_85,usm_0.66_1.00_0.01/ab128b_291d713ab1ea4929811849dea5769373~mv2.jpg" 
+                        <img src="https://static.wixstatic.com/media/ab128b_291d713ab1ea4929811849dea5769373~mv2.jpg/v1/fill/w_459,h_459,q_85,usm_0.66_1.00_0.01/ab128b_291d713ab1ea4929811849dea5769373~mv2.jpg"
                              class="img-fluid" alt="Music Discs">
                         <a>
                             <div class="mask rgba-white-slight"></div>
@@ -280,8 +280,8 @@
                     <div class="card-body text-center no-padding">
                         <!--Category & Title-->
                         @*<a href="" class="text-muted">
-                            <h5>Vinyls</h5>
-                        </a>*@
+                                <h5>Vinyls</h5>
+                            </a>*@
                         <h4 class="card-title">
                             <strong>
                                 <a href="">Vinyls</a>
@@ -315,7 +315,7 @@
                 <div class="card card-cascade wider card-ecommerce">
                     <!--Card image-->
                     <div class="view overlay">
-                        <img src="https://cdn.shopify.com/s/files/1/1306/0683/products/mens_grey_tshirt_shirt_daaf00a8-0200-4d5f-a491-c25e27e9ba5a_1024x1024.jpg?v=1507028591" 
+                        <img src="https://cdn.shopify.com/s/files/1/1306/0683/products/mens_grey_tshirt_shirt_daaf00a8-0200-4d5f-a491-c25e27e9ba5a_1024x1024.jpg?v=1507028591"
                              class="img-fluid" alt="sample photo">
                         <a>
                             <div class="mask rgba-white-slight"></div>
@@ -326,8 +326,8 @@
                     <div class="card-body text-center no-padding">
                         <!--Category & Title-->
                         @*<a href="" class="text-muted">
-                            <h5>The images</h5>
-                        </a>*@
+                                <h5>The images</h5>
+                            </a>*@
                         <h4 class="card-title">
                             <strong>
                                 <a href="">Souvenirs</a>
@@ -371,8 +371,8 @@
                     <div class="card-body text-center no-padding">
                         <!--Category & Title-->
                         @*<a href="" class="text-muted">
-                            <h5>CDs and other formats</h5>
-                        </a>*@
+                                <h5>CDs and other formats</h5>
+                            </a>*@
                         <h4 class="card-title">
                             <strong>
                                 <a href="">CDs and other formats</a>
@@ -403,10 +403,10 @@
         </div>
 
         @*<div class="mt-4">
-            <a href="#" data-offset="90" class="btn btn-rounded btn-elegant waves-effect waves-light" style="visibility: visible;">
-                See more
-            </a>
-        </div>*@
+                <a href="#" data-offset="90" class="btn btn-rounded btn-elegant waves-effect waves-light" style="visibility: visible;">
+                    See more
+                </a>
+            </div>*@
         <!--Grid row-->
     </section>
 </div>
@@ -458,18 +458,18 @@
 
                             <div class="md-form">
                                 <i class="fa fa-tag prefix grey-text"></i>
-                                <input type="text" id="form-Subject" class="form-control">
+                                <input type="text" id="form-subject" class="form-control">
                                 <label for="form-Subject">Subject</label>
                             </div>
 
                             <div class="md-form">
                                 <i class="fa fa-pencil prefix grey-text"></i>
-                                <textarea type="text" id="form-text" class="form-control md-textarea" rows="3"></textarea>
+                                <textarea type="text" id="form-content" class="form-control md-textarea" rows="3"></textarea>
                                 <label for="form-text">Your message</label>
                             </div>
 
                             <div class="text-center">
-                                <button class="btn btn-light-blue">Submit</button>
+                                <button id="submitButton" class="btn btn-light-blue">Submit</button>
                             </div>
 
                         </div>
@@ -551,5 +551,44 @@
         }
 
         google.maps.event.addDomListener(window, 'load', init_map);
+    </script>
+
+    <script src="~/js/sweetalert2.all.js"></script>
+
+    <script>
+        $("#submitButton").click(function () {
+            var postData = JSON.stringify({
+                "name": $("#form-name").val(),
+                "email": $("#form-email").val(),
+                "subject": $("#form-subject").val(),
+                "content": $("#form-content").val(),
+            });
+            var targetUrl = window.location.href + "api/messages";
+
+            $.ajax({
+                url: targetUrl,
+                type: "post",
+                data: postData,
+                headers: {
+                    "accept": "application/json",
+                    "Content-Type": "application/json-patch+json",
+                },
+                success: function (response) {
+                    swal(
+                        'Thank you!',
+                        'We got your message. We will try to respond as soon as possible.',
+                        'success'
+                    );
+                },
+                error: function (xhr, status, error) {
+                    console.log(JSON.parse(xhr.responseText));
+                    swal(
+                        'Error',
+                        'We are really sorry :( Something wrong happened.',
+                        'error'
+                    );
+                }
+            });
+        });
     </script>
 }
